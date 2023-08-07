@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Button } from "./common/Buttons";
 import { Table } from "./common/Table";
 
-export const TableContructor = () => {
+export const Home = () => {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
 

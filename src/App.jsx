@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "./components/common/Header";
-import { TableContructor } from "./components/TableContructor";
+import { Home } from "./components/Home";
 import { Navigator } from "./components/common/Navigator";
 import { AboutApp } from "./components/AboutApp";
 
@@ -10,7 +10,7 @@ const App = () => {
       return (
         <>
           <Header />
-          <TableContructor />
+          <Home />
         </>
       );
     } else if (window.location.pathname === "/aboutApp") {
@@ -23,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <div className="fluid-container">
+    <div>
       {handleNavigation()}
       <Navigator />
     </div>
