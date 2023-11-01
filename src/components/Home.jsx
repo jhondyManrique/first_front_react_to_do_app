@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { addTask } from "./services/addTasks";
 import { deleteAll } from "./services/deleteAll";
 import { viewAllTasks } from "./services/viewAllTasks";
 import { viewOne } from "./services/viewone";
 import { useEffect } from "react";
 import { Button } from "./common/Buttons";
 import { Table } from "./common/Table";
+import { Header } from "./common/Header";
+import { LinkButton } from "./common/Buttons";
 
 export const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -13,16 +14,6 @@ export const Home = () => {
 
   const handleViewAll = async () => {
     try {
-      const result = await viewAllTasks();
-      setTasks(result);
-    } catch (error) {
-      console.log("Error while fetching tasks: ", error);
-    }
-  };
-
-  const handleAdd = async () => {
-    try {
-      addTask(input);
       const result = await viewAllTasks();
       setTasks(result);
     } catch (error) {
@@ -54,12 +45,8 @@ export const Home = () => {
 
   return (
     <>
-      <Button
-        nameButton={"add task"}
-        onClick={() => {
-          handleAdd();
-        }}
-      />
+      <Header />
+      <LinkButton link="/add" name="ADD" />
       <Button
         nameButton={"view all"}
         onClick={() => {

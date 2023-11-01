@@ -1,5 +1,7 @@
+import { LinkButton } from "./Buttons";
 export const Navigator = () => (
   <>
-    <a href="/home">HOME</a> | <a href="/aboutApp">about app v2</a>
+    <LinkButton link="/" name="HOME" /> |{" "}
+    <LinkButton link="/about" name="ABOUT APP" />
   </>
 );

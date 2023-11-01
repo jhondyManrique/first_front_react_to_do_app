@@ -1,32 +1,21 @@
 import React from "react";
-import { Header } from "./components/common/Header";
 import { Home } from "./components/Home";
 import { Navigator } from "./components/common/Navigator";
+import { AddForm } from "./components/FormAdd";
 import { AboutApp } from "./components/AboutApp";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const handleNavigation = () => {
-    if (window.location.pathname === "/home") {
-      return (
-        <>
-          <Header />
-          <Home />
-        </>
-      );
-    } else if (window.location.pathname === "/aboutApp") {
-      return (
-        <>
-          <AboutApp />
-        </>
-      );
-    }
-  };
-
   return (
-    <div>
-      {handleNavigation()}
+    <Router>
+      <Routes>
+        <Route path="/" exact Component={Home} />
+        <Route path="/about" exact Component={AboutApp} />
+        <Route path="/add" exact Component={AddForm} />
+      </Routes>
       <Navigator />
-    </div>
+    </Router>
   );
 };
 
